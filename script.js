@@ -47,3 +47,44 @@ document.querySelectorAll('.mobile-nav-links a, .mobile-menu-footer a').forEach(
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeMobileMenu();
 });
+
+const parallaxTargets = [
+  { element: document.querySelector('.orb-one'), speed: 0.18 },
+  { element: document.querySelector('.orb-two'), speed: -0.12 },
+  { element: document.querySelector('.abstract-lines'), speed: 0.22 },
+  { element: document.querySelector('.hero-card'), speed: -0.12 },
+  { element: document.querySelector('.cta-orbit'), speed: -0.14 }
+].filter((item) => item.element);
+
+let parallaxFrame = null;
+const updateParallax = () => {
+  parallaxFrame = null;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const viewportCenter = window.innerHeight / 2;
+  parallaxTargets.forEach(({ element, speed }) => {
+    const box = element.getBoundingClientRect();
+    if (box.bottom < -120 || box.top > window.innerHeight + 120) return;
+    const offset = (box.top + box.height / 2 - viewportCenter) * speed;
+    element.style.setProperty('--parallax-y', `${offset.toFixed(2)}px`);
+  });
+};
+
+window.addEventListener('scroll', () => {
+  if (!parallaxFrame) parallaxFrame = requestAnimationFrame(updateParallax);
+}, { passive: true });
+window.addEventListener('resize', updateParallax, { passive: true });
+updateParallax();
+
+const heroArt = document.querySelector('.hero-art');
+heroArt?.addEventListener('pointermove', (event) => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const bounds = heroArt.getBoundingClientRect();
+  const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 10;
+  const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * -10;
+  heroArt.style.setProperty('--hero-x', `${x.toFixed(2)}px`);
+  heroArt.style.setProperty('--hero-y', `${y.toFixed(2)}px`);
+});
+heroArt?.addEventListener('pointerleave', () => {
+  heroArt.style.setProperty('--hero-x', '0px');
+  heroArt.style.setProperty('--hero-y', '0px');
+});

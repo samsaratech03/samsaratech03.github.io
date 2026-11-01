@@ -14,12 +14,29 @@
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
   <div class="cursor-glow"></div>
-  <header class="site-header">
+  <header class="bootstrap-site-header navbar navbar-expand-lg">
+    <div class="container-fluid header-container">
+      <a class="brand navbar-brand" href="#top" aria-label="SamsaraTech home"><img src="assets/images/logo.png" alt="SamsaraTech logo"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#samsaraNavbar" aria-controls="samsaraNavbar" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="samsaraNavbar">
+        <ul class="navbar-nav mx-auto desktop-nav" aria-label="Primary navigation">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a class="header-cta" href="#contact">Start a project <span>-></span></a>
+      </div>
+    </div>
+  </header>
+  <header class="site-header legacy-site-header">
     <a class="brand" href="#top" aria-label="SamsaraTech home"><img src="assets/images/logo.png" alt="SamsaraTech logo"></a>
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="#home">Home</a><a href="#process">Process</a><a href="#services">Services</a><a
@@ -103,7 +120,22 @@
       </div>
     </section>
 
-    <section class="skills section-pad">
+      <section class="capabilities section-pad" id="capabilities">
+        <div class="section-heading reveal">
+          <div><p class="eyebrow">OUR CAPABILITIES</p><h2>Digital solutions<br><span>built for growth</span></h2></div>
+          <p class="muted-copy">From first idea to long-term growth, SamsaraTech brings strategy, design and technology together under one dependable partner.</p>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card reveal"><span class="capability-number">01</span><span class="capability-icon">&lt;/&gt;</span><h3>Web Development</h3><p>Fast, responsive websites engineered around your business goals and customer journey.</p><a href="#contact">Explore service <span>↗</span></a></article>
+          <article class="capability-card reveal"><span class="capability-number">02</span><span class="capability-icon">◈</span><h3>App Development</h3><p>Reliable web and mobile applications that simplify workflows and keep users engaged.</p><a href="#contact">Explore service <span>↗</span></a></article>
+          <article class="capability-card reveal"><span class="capability-number">03</span><span class="capability-icon">✦</span><h3>UI/UX &amp; Logo Design</h3><p>Clear interfaces and memorable visual identities that make your brand easier to trust.</p><a href="#contact">Explore service <span>↗</span></a></article>
+          <article class="capability-card reveal"><span class="capability-number">04</span><span class="capability-icon">↗</span><h3>Landing Pages</h3><p>Focused landing pages designed to communicate value and convert more qualified leads.</p><a href="#contact">Explore service <span>↗</span></a></article>
+          <article class="capability-card reveal"><span class="capability-number">05</span><span class="capability-icon">◎</span><h3>Custom CRM Systems</h3><p>Connected CRM tools that help teams manage leads, customers, sales and operations.</p><a href="#contact">Explore service <span>↗</span></a></article>
+          <article class="capability-card reveal"><span class="capability-number">06</span><span class="capability-icon">⌁</span><h3>SEO &amp; Growth</h3><p>Technical and content SEO that improves visibility, discoverability and sustainable traffic.</p><a href="#contact">Explore service <span>↗</span></a></article>
+        </div>
+      </section>
+
+      <section class="skills section-pad">
       <div class="section-heading reveal">
         <div>
           <p class="eyebrow">OUR TOOLKIT</p>
@@ -278,6 +310,7 @@
     "serviceType": ["Web Development", "App Development", "Logo Design", "UI/UX Design", "Landing Page Development", "Mobile-First Development", "CRM Development", "SEO Services"]
   }
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 
