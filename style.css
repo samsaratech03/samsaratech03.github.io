@@ -1881,3 +1881,5 @@ body {
 .visual-lines {
     background-image: linear-gradient(90deg, rgba(5, 7, 6, .08), rgba(5, 7, 6, .08)), url('assets/images/generated/project-brand-identity.webp')
 }
+.brand img{display:block;width:132px;height:auto;max-height:42px;object-fit:contain;object-position:left center}.footer .brand img{width:188px;max-height:96px;filter:brightness(.55)}
+@media(max-width:560px){.brand img{width:112px;max-height:36px}.footer .brand img{width:170px}}
